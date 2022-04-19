@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record model="fleet.vehicule" id="honda_city">
+        <field name="brand_model">Honda/City</field>
+        <field name="sale_price">2000000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">15/02/2020</field>
+        <field name="quantity_service">4</field>
+        <field name="measurement_unit">kilometers</field>
+        <field name="distance">15000000</field>
+    </record>
+
+    <record model="fleet.vehicule" id="ford_ecosport">
+        <field name="brand_model">Ford/Ecosport</field>
+        <field name="sale_price">3000000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">18/10/2021</field>
+        <field name="quantity_service">1</field>
+        <field name="measurement_unit">mileage</field>
+        <field name="distance">13000</field>
+    </record>
+
+    <record model="fleet.vehicule" id="citroen_C3">
+        <field name="brand_model">Citroen/C3</field>
+        <field name="sale_price">4000000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">18/04/2022</field>
+        <field name="quantity_service">0</field>
+        <field name="measurement_unit">mileage</field>
+        <field name="distance">0</field>
+    </record>
+
+    <record model="fleet.vehicule" id="ford_focus">
+        <field name="brand_model">Ford/Focus</field>
+        <field name="sale_price">7000000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">18/04/2021</field>
+        <field name="quantity_service">2</field>
+        <field name="measurement_unit">kilometers</field>
+        <field name="distance">200000</field>
+    </record>
+
+    <record model="fleet.vehicule" id="fiat_idea">
+        <field name="brand_model">Fiat/Idea</field>
+        <field name="sale_price">1500000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">18/04/2019</field>
+        <field name="quantity_service">6</field>
+        <field name="measurement_unit">mileage</field>
+        <field name="distance">30000</field>
+    </record>
+
+    <record model="fleet.vehicule" id="toyota_corolla">
+        <field name="brand_model">Toyota/Corolla</field>
+        <field name="sale_price">2500000</field>
+        <field name="sale_date" options="{'format':'DD/MM/YYYY'}">18/04/2015</field>
+        <field name="quantity_service">14</field>
+        <field name="measurement_unit">kilometers</field>
+        <field name="distance">100000</field>
+    </record>
+
+</odoo>
