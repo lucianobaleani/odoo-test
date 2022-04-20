@@ -1,14 +1,13 @@
+from odoo import models, fields, api
+
 from datetime import timedelta
 from dateutil import relativedelta
 
-from odoo import models, fields, api
+class Vehicle(models.Model):
+    _name = "fleet.vehicle"
+    _description = "Model of a vehicle"
 
-
-class Vehicule(models.Model):
-    _name = "fleet.vehicule"
-    _description = "Model of a vehicule"
-
-    brand_model = fields.Char(string="Vehicule Brand/Model")
+    brand_model = fields.Char(string="vehicle Brand/Model")
     sale_price = fields.Float()
     sale_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services")

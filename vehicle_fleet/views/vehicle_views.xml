@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.ui.view" id="fleet_vehicule_views_form">
-        <field name="name">fleet.vehicule.form</field>
-        <field name="model">fleet.vehicule</field>
+    <record model="ir.ui.view" id="fleet_vehicle_views_form">
+        <field name="name">fleet.vehicle.form</field>
+        <field name="model">fleet.vehicle</field>
         <field name="arch" type="xml">
-            <form string="Vehicule Form">
+            <form string="Vehicle Form">
                 <sheet>
                     <h1><field name="brand_model"/></h1>
                         <group>
@@ -23,11 +23,11 @@
             </form>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicule_list">
-        <field name="name">fleet.vehicule.list</field>
-        <field name="model">fleet.vehicule</field>
+    <record model="ir.ui.view" id="fleet_vehicle_list">
+        <field name="name">fleet.vehicle.list</field>
+        <field name="model">fleet.vehicle</field>
         <field name="arch" type="xml">
-            <tree string="Vehicule's Fleet">
+            <tree string="vehicle's Fleet">
                 <field name="brand_model"/>
                 <field name="sale_date"/>
                 <field name="measurement_unit"/>

@@ -1,0 +1,22 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="fleet_vehicle_list_action">
+        <field name="name">Vehicles</field>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first vehicle record
+            </p> 
+        </field>
+    </record>
+
+
+    <menuitem name="Fleet"
+            id="menu_fleet"
+            sequence="1"/>
+
+    <menuitem id="men_fleet_vehicle" name="Vehicle Fleet" parent="menu_fleet" sequence="2"
+    action="fleet_vehicle_list_action"/> 
+
+</odoo>

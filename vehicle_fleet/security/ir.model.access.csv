@@ -1,2 +1,2 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-fleet_admin,fleet admin,model_fleet_vehicule,group_fleet_admin,1,1,1,1
+fleet_admin,fleet admin,model_fleet_vehicle,group_fleet_admin,1,1,1,1
