@@ -13,7 +13,7 @@ class Vehicule(models.Model):
     sale_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services")
     measurement_unit = fields.Selection(
-        selection=[("kilometers", "Kilometers(KM)"), ("mileage", "Mileage(Mi)")],
+        selection=[("kilometers", "Kilometers (Km)"), ("mileage", "Mileage(Mi)")],
         copy=False,
     )
     distance = fields.Integer()
