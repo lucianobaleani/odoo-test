@@ -19,8 +19,10 @@ class Vehicle(models.Model):
         copy=False,
     )
     distance = fields.Integer()
-    current_price = fields.Float(compute="_compute_current_price",
-                                store=True)
+    current_price = fields.Float(default=0,
+                                compute="_compute_current_price",
+                                store=True,
+                                help="Minimum price = 1 ")
 
     
     @api.depends("sale_price","measurement_unit","distance") 
@@ -30,13 +32,20 @@ class Vehicle(models.Model):
         :param sale_price, measurement_unit, distance: "fleet.vehicle" record.
         :writes current_: A float as result based on the sale_price, the distance and the measurement_unit(Km o Mi).
         """
-        self.ensure_one()
-        if self.measurement_unit == "kilometers":
-            reduction = self.distance // 10000
-            self.current_price = self.sale_price - (self.sale_price * (0.05 * reduction))
-        else:
-            reduction = self.distance // 6213.712
-            self.current_price = self.sale_price - (self.sale_price * (0.05 * reduction))
+        for record in self:
+            record.current_price = record.sale_price
+            if record.measurement_unit == "kilometers":
+                reduction = record.distance // 10000
+                while reduction != 0:
+                    record.current_price = record.current_price * 0.95
+                    reduction = reduction - 1
+            else:
+                reduction = record.distance // 6213.712
+                while reduction != 0:
+                    record.current_price = record.current_price * 0.95
+                    reduction = reduction - 1
+            if record.current_price < 1:
+                record.current_price = 1
 
 
     @api.onchange("sale_date")
