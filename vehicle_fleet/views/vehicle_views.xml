@@ -32,6 +32,8 @@
                 <field name="sale_date"/>
                 <field name="measurement_unit"/>
                 <field name="distance"/>
+                <field name="sale_price"/>
+                <field name="current_price"/>
             </tree>
         </field>
     </record>
