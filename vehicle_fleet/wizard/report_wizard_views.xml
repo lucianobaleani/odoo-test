@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_report">
+        <field name="name">fleet.vehicle.wizard</field>
+        <field name="model">fleet.vehicle.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create report">
+                <group>               
+                    <field name="purchase_date"/>
+                </group>
+                <footer>
+                    <button name="create_fleet_report" type="object"
+                            string="Create" class="oe_highlight"/>
+                    or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="launch_report_wizard"
+                name="Create Report"
+                binding_model="fleet.vehicle"
+                res_model="fleet.vehicle.wizard"
+                view_mode="form"
+                target="new"/>
+
+</odoo>
