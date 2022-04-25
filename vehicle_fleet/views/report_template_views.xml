@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_report_template_view_list">
+        <field name="name">fleet.vehicle.report.list</field>
+        <field name="model">fleet.vehicle.report</field>
+        <field name="arch" type="xml">
+            <tree string="Report's List">
+                <field name="vehicle"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

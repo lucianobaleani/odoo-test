@@ -5,16 +5,12 @@ from datetime import date
 
 class ReportWizard(models.TransientModel):
     _name="fleet.vehicle.wizard"
-    _description="Wizard: Quick report of vehicles filtering sale date"
-
-    def _default_vehicles(self):
-        return self.env['fleet.vehicle'].browse(self._context.get("brand_model"))
+    _description="Wizard: Quick report of vehicles filtering sale date"    
     
     
     purchase_date=fields.Date(default=fields.Date.today())
     vehicle=fields.Many2many(comodel_name="fleet.vehicle",
-                            string="Vehicles",
-                            default=_default_vehicles)
+                            string="Vehicles")
 
     
     def create_fleet_report(self):

@@ -24,5 +24,5 @@
                 res_model="fleet.vehicle.wizard"
                 view_mode="form"
                 target="new"/>
-
+    
 </odoo>

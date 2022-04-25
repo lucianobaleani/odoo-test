@@ -28,7 +28,6 @@
                                         <th name="th_brand_model">Brand/Model</th>
                                         <th name="th_measurement_unit">Measurement Unit</th>
                                         <th name="th_distance">Distance</th>
-                                        <th name="th_sale_price">Sale Price</th>
                                         <th name="th_curren_price">Current Price</th>
                                         <th name="th_quantity_service">Total of Services</th>
                                     </tr>
@@ -37,8 +36,20 @@
                                     <t t-foreach="doc.vehicle" t-as="vehicle">
                                         <tr>
                                             <td t-if="vehicle.brand_model" name="td_brand_model">
-                                                <span t-field="vehicle.brand.name"/>
+                                                <span t-field="vehicle.brand_model"/>
                                             </td>
+                                            <td t-if="vehicle.measurement_unit" name="td_measurement_unit">
+                                                <span t-field="vehicle.measurement_unit"/>
+                                            </td>
+                                            <td t-if="vehicle.distance" name="td_distance">
+                                                <span t-field="vehicle.distance"/>
+                                            </td>
+                                            <td t-if="vehicle.current_price" name="td_current_price">
+                                                <span t-field="vehicle.current_price"/>
+                                            </td>
+                                            <td t-if="vehicle.quantity_service" name="td_quantity_service">
+                                                <span t-field="vehicle.quantity_service"/>
+                                            </td>                                                                                                                                            
                                         </tr>
                                     </t>
                                 </tbody>

@@ -24,6 +24,7 @@
         "views/vehicle_menuitems.xml",
         "views/vehicle_views.xml",
         "wizard/report_wizard_views.xml",
+        "views/report_template_views.xml",
         "report/vehicles_report_template.xml",
     ],
 
