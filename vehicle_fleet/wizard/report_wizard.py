@@ -11,20 +11,10 @@ class ReportWizard(models.TransientModel):
         return self.env['fleet.vehicle'].browse(self._context.get("brand_model"))
     
     
+    purchase_date=fields.Date(default=fields.Date.today())
     vehicle=fields.Many2many(comodel_name="fleet.vehicle",
                             string="Vehicles",
                             default=_default_vehicles)
-
-
-
-    purchase_date=fields.Date(required=True)
-
-    vehicle_brand_model = fields.Char(related="vehicle.brand_model")
-    vehicle_sale_price = fields.Float(related="vehicle.sale_price")
-    vehicle_quantity_service = fields.Integer(related="vehicle.quantity_service")
-    vehicle_measurement_unit = fields.Selection(related="vehicle.measurement_unit")
-    vehicle_distance = fields.Integer(related="vehicle.distance")
-    vehicle_current_price = fields.Float(related="vehicle.current_price")
 
     
     def create_fleet_report(self):

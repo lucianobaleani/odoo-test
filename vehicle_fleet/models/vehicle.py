@@ -7,7 +7,7 @@ class Vehicle(models.Model):
     _name = "fleet.vehicle"
     _description = "Model of a vehicle"
 
-    brand_model = fields.Char(string="vehicle Brand/Model")
+    brand_model = fields.Char(string="Vehicle Brand/Model")
     sale_price = fields.Float()
     sale_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services",

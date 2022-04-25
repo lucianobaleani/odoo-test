@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="report_vehicle"
+        model="fleet.vehicle"
+        string="Vehicles Report"
+        name="fleet_vehicle.report_vehicle_document"
+        file="fleet_vehicle.report_vehicle"
+        report_type="qweb-html"/>
+    
+    <template id="fleet_vehicle_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name" class="mt16"/>
+                        <div class="row mt32 mb32" id="vehicle_info">
+                            <div class="col-auto mw-100 mb-2">
+                                <strong>Sale Date:</strong>
+                                    <t t-if="doc.sale_date">
+                                        <span t-field="doc.sale_date"/>
+                                    </t>
+                            </div>
+                            <h4>Vehicle</h4>
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th name="th_brand_model">Brand/Model</th>
+                                        <th name="th_measurement_unit">Measurement Unit</th>
+                                        <th name="th_distance">Distance</th>
+                                        <th name="th_sale_price">Sale Price</th>
+                                        <th name="th_curren_price">Current Price</th>
+                                        <th name="th_quantity_service">Total of Services</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.vehicle" t-as="vehicle">
+                                        <tr>
+                                            <td t-if="vehicle.brand_model" name="td_brand_model">
+                                                <span t-field="vehicle.brand.name"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
