@@ -5,7 +5,7 @@
         <field name="model">fleet.vehicle.report</field>
         <field name="arch" type="xml">
             <tree string="Report's List">
-                <field name="vehicle"/>
+                <field name="vehicles"/>
             </tree>
         </field>
     </record>

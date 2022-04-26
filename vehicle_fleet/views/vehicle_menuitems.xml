@@ -12,7 +12,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="fleet_vehicle_report_list_action">
-        <field name="name">Report List</field>
+        <field name="name">Reports</field>
         <field name="res_model">fleet.vehicle.report</field>
         <field name="view_mode">tree,form,pivot</field>
         <field name="help" type="html">
@@ -20,8 +20,7 @@
                 Create the first report record
             </p> 
         </field>
-    </record>
-
+    </record>    
 
 
     <menuitem name="Fleet"
@@ -31,12 +30,11 @@
     <menuitem id="menu_fleet_vehicle" parent="menu_fleet" sequence="2"
     action="fleet_vehicle_list_action"/> 
 
-    <menuitem id="fleet_vehicle_report" parent="menu_fleet" sequence="3"/> 
+    <menuitem id="fleet_vehicle_report" parent="menu_fleet" sequence="4"/> 
     
-    <menuitem id="fleet_vehicle_report_creation" parent="fleet_vehicle_report" sequence="4"
+    <menuitem id="fleet_vehicle_report_creation" parent="fleet_vehicle_report" sequence="5"
     action="launch_report_wizard"/>
 
-    <menuitem id="fleet_vehicle_report_list" parent="fleet_vehicle_report" sequence="5"
-    action="fleet_vehicle_report_list_action"/>
+
 
 </odoo>

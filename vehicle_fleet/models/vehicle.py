@@ -55,7 +55,6 @@ class Vehicle(models.Model):
         :param sale_date: "fleet.vehicle record.
         :writes: An int as a result base on the calculation between today and sale_date.
         """
-        self.ensure_one()
         today = date.today()
         for record in self:
             month = relativedelta.relativedelta(today, record.sale_date)
