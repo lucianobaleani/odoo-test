@@ -1,62 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <report
-        id="report_vehicle"
-        model="fleet.vehicle"
-        string="Vehicles Report"
-        name="fleet_vehicle.report_vehicle_document"
-        file="fleet_vehicle.report_vehicle"
-        report_type="qweb-html"/>
     
+    <record id="action_print_vehicle_purchase_report" model="ir.actions.report">
+        <field name="name">Vehicle Purchases Report</field>
+        <field name="model">fleet.vehicle.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vehicle_fleet.fleet_vehicle_document</field>
+    </record>
+
     <template id="fleet_vehicle_document">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t t-call="web.external_layout">
-                    <div class="page">
-                        <h2 t-field="doc.name" class="mt16"/>
-                        <div class="row mt32 mb32" id="vehicle_info">
-                            <div class="col-auto mw-100 mb-2">
-                                <strong>Sale Date:</strong>
-                                    <t t-if="doc.sale_date">
-                                        <span t-field="doc.sale_date"/>
-                                    </t>
-                            </div>
-                            <h4>Vehicle</h4>
-                            <table class="table table-sm o_main_table">
-                                <thead>
-                                    <tr>
-                                        <th name="th_brand_model">Brand/Model</th>
-                                        <th name="th_measurement_unit">Measurement Unit</th>
-                                        <th name="th_distance">Distance</th>
-                                        <th name="th_curren_price">Current Price</th>
-                                        <th name="th_quantity_service">Total of Services</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <t t-foreach="doc.vehicle" t-as="vehicle">
-                                        <tr>
-                                            <td t-if="vehicle.brand_model" name="td_brand_model">
-                                                <span t-field="vehicle.brand_model"/>
-                                            </td>
-                                            <td t-if="vehicle.measurement_unit" name="td_measurement_unit">
-                                                <span t-field="vehicle.measurement_unit"/>
-                                            </td>
-                                            <td t-if="vehicle.distance" name="td_distance">
-                                                <span t-field="vehicle.distance"/>
-                                            </td>
-                                            <td t-if="vehicle.current_price" name="td_current_price">
-                                                <span t-field="vehicle.current_price"/>
-                                            </td>
-                                            <td t-if="vehicle.quantity_service" name="td_quantity_service">
-                                                <span t-field="vehicle.quantity_service"/>
-                                            </td>                                                                                                                                            
-                                        </tr>
-                                    </t>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </t>
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h1 align="center">Vehicle's Report</h1>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th name="th_current_price">Current Price</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <t t-foreach="data" t-as="vehicle">
+                            <h4>
+                                <t t-esc="vehicle['current_price']"/>
+                            </h4>
+                        </t>
+                    </tbody>
+                </div>
             </t>
         </t>
     </template>
