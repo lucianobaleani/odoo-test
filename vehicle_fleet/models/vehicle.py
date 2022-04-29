@@ -1,8 +1,8 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 from datetime import date 
 from dateutil import relativedelta
-from decimal import Decimal
 
 
 class Vehicle(models.Model):
@@ -48,7 +48,7 @@ class Vehicle(models.Model):
                     record.current_price = round(record.current_price * 0.95, 2)
                     reduction = reduction - 1
             if record.current_price < 1:
-                record.current_price = 1
+                record.current_price = 1           
 
 
     @api.onchange("purchase_date")
@@ -61,4 +61,4 @@ class Vehicle(models.Model):
         today = date.today()
         for record in self:
             month = relativedelta.relativedelta(today, record.purchase_date)
-            record.quantity_service = (month.months+(12*month.years))//6
+            record.quantity_service.write = (month.months+(12*month.years))//6

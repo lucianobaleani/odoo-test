@@ -32,7 +32,7 @@
                                 <t t-debug="pdb"/>
                                 <tr>
                                     <td>
-                                        <t t-esc="vehicle['purchase_date']" t-options='{"format": "dd/mm/yyyy"}'/>
+                                        <t t-esc="vehicle['purchase_date']" />
                                     </td>
                                     <td>
                                         <t t-esc="vehicle['brand_model']"/>
