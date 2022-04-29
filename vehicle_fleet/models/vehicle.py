@@ -2,6 +2,8 @@ from odoo import models, fields, api
 
 from datetime import date 
 from dateutil import relativedelta
+from decimal import Decimal
+
 
 class Vehicle(models.Model):
     _name = "fleet.vehicle"
@@ -9,9 +11,10 @@ class Vehicle(models.Model):
 
     brand_model = fields.Char(string="Vehicle Brand/Model")
     sale_price = fields.Float()
-    sale_date = fields.Date(default=fields.Date.today)
+    purchase_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services",
                                         compute="_compute_service",
+                                        readonly=False,
                                         store=True)
 
     measurement_unit = fields.Selection(
@@ -37,25 +40,25 @@ class Vehicle(models.Model):
             if record.measurement_unit == "kilometers":
                 reduction = record.distance // 10000
                 while reduction != 0:
-                    record.current_price = record.current_price * 0.95
+                    record.current_price = round(record.current_price * 0.95, 2)
                     reduction = reduction - 1
             else:
                 reduction = record.distance // 6213.712
                 while reduction != 0:
-                    record.current_price = record.current_price * 0.95
+                    record.current_price = round(record.current_price * 0.95, 2)
                     reduction = reduction - 1
             if record.current_price < 1:
                 record.current_price = 1
 
 
-    @api.onchange("sale_date")
+    @api.onchange("purchase_date")
     def _compute_service(self) ->None :
         """
         Compute the number of services that the vehicle has recieved, 1 every 6 months.
-        :param sale_date: "fleet.vehicle record.
-        :writes: An int as a result base on the calculation between today and sale_date.
+        :param purchase_date: "fleet.vehicle record.
+        :writes: An int as a result base on the calculation between today and purchase_date.
         """
         today = date.today()
         for record in self:
-            month = relativedelta.relativedelta(today, record.sale_date)
-            record.quantity_service= (month.months + (12*month.years))//6
+            month = relativedelta.relativedelta(today, record.purchase_date)
+            record.quantity_service = (month.months+(12*month.years))//6

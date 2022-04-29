@@ -22,6 +22,13 @@
         </field>
     </record>    
 
+    <act_window id="launch_report_wizard"
+                name="Create Report"
+                binding_model="fleet.vehicle"
+                res_model="fleet.vehicle.wizard"
+                view_mode="form"
+                target="new"/>    
+
 
     <menuitem name="Fleet"
             id="menu_fleet"
@@ -30,11 +37,9 @@
     <menuitem id="menu_fleet_vehicle" parent="menu_fleet" sequence="2"
     action="fleet_vehicle_list_action"/> 
 
-    <menuitem id="fleet_vehicle_report" parent="menu_fleet" sequence="4"/> 
+    <menuitem id="fleet_vehicle_report" name="Fleet Report" parent="menu_fleet" sequence="4"/> 
     
     <menuitem id="fleet_vehicle_report_creation" parent="fleet_vehicle_report" sequence="5"
     action="launch_report_wizard"/>
-
-
 
 </odoo>

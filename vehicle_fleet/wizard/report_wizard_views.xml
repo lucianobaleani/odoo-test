@@ -6,7 +6,8 @@
         <field name="arch" type="xml">
             <form string="Create report">
                 <group>               
-                    <field name="purchase_date"/>
+                    <field name="purchase_date_from"/>
+                    <field name="purchase_date_to"/>
                 </group>
                 <footer>
                     <button name="create_fleet_report" type="object"

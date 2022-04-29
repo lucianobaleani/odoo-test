@@ -9,7 +9,7 @@
                     <h1><field name="brand_model"/></h1>
                         <group>
                             <group>
-                                <field name="sale_date"/>
+                                <field name="purchase_date"/>
                                 <field name="sale_price"/>
                                 <field name="quantity_service"/>
                             </group>
@@ -29,7 +29,8 @@
         <field name="arch" type="xml">
             <tree string="vehicle's Fleet">
                 <field name="brand_model"/>
-                <field name="sale_date"/>
+                <field name="purchase_date"/>
+                <field name="quantity_service"/>
                 <field name="measurement_unit"/>
                 <field name="distance"/>
                 <field name="sale_price"/>
