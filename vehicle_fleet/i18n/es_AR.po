@@ -1,0 +1,250 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* vehicle_fleet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-30 15:43+0000\n"
+"PO-Revision-Date: 2022-04-30 15:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Brand/Model"
+msgstr "Marca/Modelo"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_views_form
+msgid "Brand/Model:"
+msgstr "Marca/Modelo"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,help:vehicle_fleet.field_fleet_vehicle__sale_price
+msgid "Cannot be negative"
+msgstr "No puede ser negativo"
+
+#. module: vehicle_fleet
+#: model:ir.actions.act_window,name:vehicle_fleet.launch_report_wizard
+msgid "Create Report"
+msgstr "Crear Reporte"
+
+#. module: vehicle_fleet
+#: model_terms:ir.actions.act_window,help:vehicle_fleet.fleet_vehicle_report_list_action
+msgid "Create the first report record"
+msgstr "Crear el primer registro de reporte"
+
+#. module: vehicle_fleet
+#: model_terms:ir.actions.act_window,help:vehicle_fleet.fleet_vehicle_list_action
+msgid "Create the first vehicle record"
+msgstr "Crear el primer registro de vehículo"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__create_uid
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__create_uid
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__create_date
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__create_date
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__current_price
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Current Price"
+msgstr "Precio Actual"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__display_name
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__distance
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Distance"
+msgstr "Distancia"
+
+#. module: vehicle_fleet
+#: model:ir.module.category,name:vehicle_fleet.category_fleet
+#: model:ir.ui.menu,name:vehicle_fleet.menu_fleet
+msgid "Fleet"
+msgstr "Flota"
+
+#. module: vehicle_fleet
+#: model:res.groups,name:vehicle_fleet.group_fleet_admin
+msgid "Fleet / Admin"
+msgstr "Flota / Admin"
+
+#. module: vehicle_fleet
+#: model:res.groups,name:vehicle_fleet.group_fleet_user
+msgid "Fleet / User"
+msgstr "Flota / Usuario"
+
+#. module: vehicle_fleet
+#: model:ir.ui.menu,name:vehicle_fleet.fleet_vehicle_report
+msgid "Fleet Report"
+msgstr "Reporte de Flota"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__id
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,help:vehicle_fleet.field_fleet_vehicle__measurement_unit
+msgid ""
+"If Kilometers then %5 less of the current price every 10,000 Km / If Miles "
+"then %5 less of the current price every 6,213.712 Mi"
+msgstr "Si es Kilometros entonces el precio actual se reduce un %5 cada 10,000 Km / Si es Millas entonces el precio actual se reduce un 5% cada 6,213.712 Mi"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields.selection,name:vehicle_fleet.selection__fleet_vehicle__measurement_unit__kilometers
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Kilometers (Km)"
+msgstr "Kilometros (Km)"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report____last_update
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__write_uid
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__write_uid
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__write_date
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__write_date
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__measurement_unit
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Measurement Unit"
+msgstr "Unidad de Medida"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields.selection,name:vehicle_fleet.selection__fleet_vehicle__measurement_unit__miles
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Miles (Mi)"
+msgstr "Millas (Mi)"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,help:vehicle_fleet.field_fleet_vehicle__current_price
+msgid "Minimum price = 1"
+msgstr "Precio Mínimo = 1"
+
+#. module: vehicle_fleet
+#: model:ir.model,name:vehicle_fleet.model_fleet_vehicle
+msgid "Model of a vehicle"
+msgstr "Modelo de un vehículo"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__purchase_date
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Purchase Date"
+msgstr "Fecha de Compra"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__purchase_date_from
+msgid "Purchase Date From"
+msgstr "Fecha de Compra Desde"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__purchase_date_to
+msgid "Purchase Date To"
+msgstr "Fecha de Compra Hasta"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_report_template_view_list
+msgid "Report's List"
+msgstr "Lista de Reporte"
+
+#. module: vehicle_fleet
+#: model:ir.actions.act_window,name:vehicle_fleet.fleet_vehicle_report_list_action
+msgid "Reports"
+msgstr "Reportes"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__sale_price
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Sale Price"
+msgstr "Precio de Venta"
+
+#. module: vehicle_fleet
+#: model:ir.model,name:vehicle_fleet.model_fleet_vehicle_report
+msgid "Template for the sales report"
+msgstr ""
+
+#. module: vehicle_fleet
+#: code:addons/vehicle_fleet/models/vehicle.py:0
+#, python-format
+msgid "The sale price cannot be negative"
+msgstr "El precio de venta no puede ser un valor negativo"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__quantity_service
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Total of Services"
+msgstr "Total de Servicios"
+
+#. module: vehicle_fleet
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle__brand_model
+msgid "Vehicle Brand/Model"
+msgstr "Vehículo Marca/Modelo"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_views_form
+msgid "Vehicle Form"
+msgstr ""
+
+#. module: vehicle_fleet
+#: model:ir.actions.report,name:vehicle_fleet.action_print_vehicle_purchase_report
+msgid "Vehicle Purchases Report"
+msgstr "Reporte de Compras de Vehículos"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_document
+msgid "Vehicle's Report"
+msgstr "Reporte de Vehículos"
+
+#. module: vehicle_fleet
+#: model:ir.actions.act_window,name:vehicle_fleet.fleet_vehicle_list_action
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_report__vehicles
+#: model:ir.model.fields,field_description:vehicle_fleet.field_fleet_vehicle_wizard__vehicle
+msgid "Vehicles"
+msgstr "Vehiculos"
+
+#. module: vehicle_fleet
+#: model:ir.model,name:vehicle_fleet.model_fleet_vehicle_wizard
+msgid "Wizard: Quick report of vehicles filtering between two purchase dates"
+msgstr ""
+"Wizard: Reporte rápido de vehículos filtrando entre dos fechas de compra"
+
+#. module: vehicle_fleet
+#: model_terms:ir.ui.view,arch_db:vehicle_fleet.fleet_vehicle_list
+msgid "vehicle's Fleet"
+msgstr "Flota de Vehículos"
