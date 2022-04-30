@@ -6,7 +6,7 @@ from datetime import timedelta
 class ReportWizard(models.TransientModel):
     #THE _name must be representavie in this case should be: "vehicle.purchases.report.wizard"
     _name = "fleet.vehicle.wizard"
-    _description = "Wizard: Quick report of vehicles filtering sale date"    
+    _description = "Wizard: Quick report of vehicles filtering between two purchase dates"    
     
     vehicle = fields.Many2many(comodel_name="fleet.vehicle",
                                 string="Vehicles")

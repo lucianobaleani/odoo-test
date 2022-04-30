@@ -14,11 +14,10 @@ class Vehicle(models.Model):
     purchase_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services",
                                         compute="_compute_service",
-                                        readonly=False,
                                         store=True)
 
     measurement_unit = fields.Selection(
-        selection=[("kilometers", "Kilometers (Km)"), ("mileage", "Mileage(Mi)")],
+        selection=[("kilometers", "Kilometers (Km)"), ("miles", "Miles(Mi)")],
         copy=False,
     )
     distance = fields.Integer()
@@ -36,22 +35,23 @@ class Vehicle(models.Model):
         :writes current_: A float as result based on the sale_price, the distance and the measurement_unit(Km o Mi).
         """
         for record in self:
-            record.current_price = record.sale_price
+            price = record.sale_price
             if record.measurement_unit == "kilometers":
                 reduction = record.distance // 10000
                 while reduction != 0:
-                    record.current_price = round(record.current_price * 0.95, 2)
+                    price = round(price * 0.95, 2)
                     reduction = reduction - 1
             else:
                 reduction = record.distance // 6213.712
                 while reduction != 0:
-                    record.current_price = round(record.current_price * 0.95, 2)
+                    price = round(price * 0.95, 2)
                     reduction = reduction - 1
-            if record.current_price < 1:
-                record.current_price = 1           
+            if price <= 1:
+                price = 1
+            record.update({"current_price": price})  
 
 
-    @api.onchange("purchase_date")
+    @api.depends("purchase_date")
     def _compute_service(self) ->None :
         """
         Compute the number of services that the vehicle has recieved, 1 every 6 months.
@@ -61,4 +61,44 @@ class Vehicle(models.Model):
         today = date.today()
         for record in self:
             month = relativedelta.relativedelta(today, record.purchase_date)
-            record.quantity_service.write = (month.months+(12*month.years))//6
+            services = (month.months+(12*month.years))//6
+            record.update({"quantity_service" : services})
+
+
+    @api.onchange("sale_price","measurement_unit","distance") 
+    def _onchange_current_price(self) -> None:
+        """
+        Compute the current price of the vehicle.
+        :param sale_price, measurement_unit, distance: "fleet.vehicle" record.
+        :writes current_: A float as result based on the sale_price, the distance and the measurement_unit(Km o Mi).
+        """
+        for record in self:
+            price = record.sale_price
+            if record.measurement_unit == "kilometers":
+                reduction = record.distance // 10000
+                while reduction != 0:
+                    price = round(price * 0.95, 2)
+                    reduction = reduction - 1
+            else:
+                reduction = record.distance // 6213.712
+                while reduction != 0:
+                    price = round(price * 0.95, 2)
+                    reduction = reduction - 1
+            if price <= 1:
+                price = 1
+            record.update({"current_price": price})  
+          
+
+
+    @api.onchange("purchase_date")
+    def _onchange_service(self) ->None :
+        """
+        Compute the number of services that the vehicle has recieved, 1 every 6 months.
+        :param purchase_date: "fleet.vehicle record.
+        :writes: An int as a result base on the calculation between today and purchase_date.
+        """
+        today = date.today()
+        for record in self:
+            month = relativedelta.relativedelta(today, record.purchase_date)
+            services = (month.months+(12*month.years))//6
+            record.update({"quantity_service" : services})

@@ -13,7 +13,7 @@
         <field name="brand_model">Ford/Ecosport</field>
         <field name="sale_price">3000000</field>
         <field name="purchase_date">2021-10-18</field>
-        <field name="measurement_unit">mileage</field>
+        <field name="measurement_unit">miles</field>
         <field name="distance">13000</field>
     </record>
 
@@ -21,7 +21,7 @@
         <field name="brand_model">Citroen/C3</field>
         <field name="sale_price">4000000</field>
         <field name="purchase_date">2022-05-20</field>
-        <field name="measurement_unit">mileage</field>
+        <field name="measurement_unit">miles</field>
         <field name="distance">0</field>
     </record>
 
@@ -37,7 +37,7 @@
         <field name="brand_model">Fiat/Idea</field>
         <field name="sale_price">1500000</field>
         <field name="purchase_date">2019-04-18</field>
-        <field name="measurement_unit">mileage</field>
+        <field name="measurement_unit">miles</field>
         <field name="distance">30000</field>
     </record>
 

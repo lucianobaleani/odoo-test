@@ -37,9 +37,9 @@
     <menuitem id="menu_fleet_vehicle" parent="menu_fleet" sequence="2"
     action="fleet_vehicle_list_action"/> 
 
-    <menuitem id="fleet_vehicle_report" name="Fleet Report" parent="menu_fleet" sequence="4"/> 
+    <menuitem id="fleet_vehicle_report" name="Fleet Report" parent="menu_fleet" sequence="2"
+    action="launch_report_wizard"/>/> 
     
-    <menuitem id="fleet_vehicle_report_creation" parent="fleet_vehicle_report" sequence="5"
-    action="launch_report_wizard"/>
+
 
 </odoo>

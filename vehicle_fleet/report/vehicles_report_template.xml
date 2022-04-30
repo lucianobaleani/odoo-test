@@ -22,8 +22,8 @@
                             <th name="th_purchase_date">Purchase Date</th>
                             <th name="th_brand_model">Brand/Model</th>
                             <th name="th_service_quantity">Total of Services</th>
-                            <th name="th_measurement_unit">Measurement Unit</th>
                             <th name="th_distance">Distance</th>
+                            <th name="th_measurement_unit">Measurement Unit</th>
                             <th name="th_sale_price">Sale Price</th>
                             <th name="th_current_price">Current Price</th>
                         </thead>
@@ -32,7 +32,7 @@
                                 <t t-debug="pdb"/>
                                 <tr>
                                     <td>
-                                        <t t-esc="vehicle['purchase_date']" />
+                                        <t t-esc="vehicle['purchase_date']" t-options='{"widget": "date","format":"dd/MM/yyyy"}' />
                                     </td>
                                     <td>
                                         <t t-esc="vehicle['brand_model']"/>
@@ -40,12 +40,17 @@
                                     <td>
                                         <t t-esc="vehicle['quantity_service']"/>
                                     </td>
-                                  <td>
-                                    <t t-esc="vehicle['measurement_unit']"/>
-                                    </td>
                                     <td>
                                         <t t-esc="vehicle['distance']"/>
-                                    </td>       
+                                    </td>                                    
+                                    <td>
+                                        <t t-if="vehicle['measurement_unit'] == 'kilometers'">
+                                            Kilometers (Km)
+                                        </t>
+                                        <t t-if="vehicle['measurement_unit'] != 'kilometers'">
+                                            Miles (Mi)
+                                        </t>                                       
+                                    </td>     
                                     <td>
                                         <t t-esc="vehicle['sale_price']"/>
                                     </td>                      

@@ -27,12 +27,12 @@
         <field name="name">fleet.vehicle.list</field>
         <field name="model">fleet.vehicle</field>
         <field name="arch" type="xml">
-            <tree string="vehicle's Fleet">
-                <field name="brand_model"/>
+            <tree string="vehicle's Fleet" default_order="purchase_date desc">
                 <field name="purchase_date"/>
+                <field name="brand_model"/>
                 <field name="quantity_service"/>
-                <field name="measurement_unit"/>
                 <field name="distance"/>
+                <field name="measurement_unit"/>
                 <field name="sale_price"/>
                 <field name="current_price"/>
             </tree>
