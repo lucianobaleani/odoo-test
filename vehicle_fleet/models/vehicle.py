@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 from datetime import date 
@@ -10,21 +10,22 @@ class Vehicle(models.Model):
     _description = "Model of a vehicle"
 
     brand_model = fields.Char(string="Vehicle Brand/Model")
-    sale_price = fields.Float()
+    sale_price = fields.Float(help="Cannot be negative")
     purchase_date = fields.Date(default=fields.Date.today)
     quantity_service = fields.Integer(string="Total of Services",
                                         compute="_compute_service",
                                         store=True)
 
     measurement_unit = fields.Selection(
-        selection=[("kilometers", "Kilometers (Km)"), ("miles", "Miles(Mi)")],
+        selection=[("kilometers", "Kilometers (Km)"), ("miles", "Miles (Mi)")],
         copy=False,
+        help="If Kilometers then %5 less of the current price every 10,000 Km / If Miles then %5 less of the current price every 6,213.712 Mi"
     )
     distance = fields.Integer()
     current_price = fields.Float(default=0,
                                 compute="_compute_current_price",
                                 store=True,
-                                help="Minimum price = 1 ")
+                                help="Minimum price = 1") 
 
     
     @api.depends("sale_price","measurement_unit","distance") 
@@ -73,22 +74,25 @@ class Vehicle(models.Model):
         :writes current_: A float as result based on the sale_price, the distance and the measurement_unit(Km o Mi).
         """
         for record in self:
-            price = record.sale_price
-            if record.measurement_unit == "kilometers":
-                reduction = record.distance // 10000
-                while reduction != 0:
-                    price = round(price * 0.95, 2)
-                    reduction = reduction - 1
+            if record.sale_price >= 0:
+                price = record.sale_price
+                if record.measurement_unit == "kilometers":
+                    reduction = record.distance // 10000
+                    while reduction != 0:
+                        price = round(price * 0.95, 2)
+                        reduction = reduction - 1
+                else:
+                    reduction = record.distance // 6213.712
+                    while reduction != 0:
+                        price = round(price * 0.95, 2)
+                        reduction = reduction - 1
+                if price <= 1:
+                    price = 1
+                record.update({"current_price": price})  
             else:
-                reduction = record.distance // 6213.712
-                while reduction != 0:
-                    price = round(price * 0.95, 2)
-                    reduction = reduction - 1
-            if price <= 1:
-                price = 1
-            record.update({"current_price": price})  
-          
+                raise ValidationError(_("The sale price cannot be negative"))
 
+          
 
     @api.onchange("purchase_date")
     def _onchange_service(self) ->None :

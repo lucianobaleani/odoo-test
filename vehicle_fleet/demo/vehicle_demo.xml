@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record model="fleet.vehicle" id="honda_city">
-        <field name="brand_model">Honda/City</field>
-        <field name="sale_price">2000000</field>
-        <field name="purchase_date">2021-04-18</field>
-        <field name="measurement_unit">kilometers</field>
-        <field name="distance">15000000</field>
+    <record model="fleet.vehicle" id="citroen_C3">
+        <field name="brand_model">Citroen/C3</field>
+        <field name="sale_price">4000000</field>
+        <field name="purchase_date">2022-05-20</field>
+        <field name="measurement_unit">miles</field>
+        <field name="distance">0</field>
     </record>
 
     <record model="fleet.vehicle" id="ford_ecosport">
@@ -17,20 +17,20 @@
         <field name="distance">13000</field>
     </record>
 
-    <record model="fleet.vehicle" id="citroen_C3">
-        <field name="brand_model">Citroen/C3</field>
-        <field name="sale_price">4000000</field>
-        <field name="purchase_date">2022-05-20</field>
-        <field name="measurement_unit">miles</field>
-        <field name="distance">0</field>
-    </record>
-
     <record model="fleet.vehicle" id="ford_focus">
         <field name="brand_model">Ford/Focus</field>
         <field name="sale_price">7000000</field>
         <field name="purchase_date">2021-04-20</field>
         <field name="measurement_unit">kilometers</field>
         <field name="distance">200000</field>
+    </record>
+
+    <record model="fleet.vehicle" id="honda_city">
+        <field name="brand_model">Honda/City</field>
+        <field name="sale_price">2000000</field>
+        <field name="purchase_date">2021-04-18</field>
+        <field name="measurement_unit">kilometers</field>
+        <field name="distance">15000000</field>
     </record>
 
     <record model="fleet.vehicle" id="fiat_idea">

@@ -9,7 +9,7 @@
                     <h1>Brand/Model: <field name="brand_model"/></h1>
                         <group>
                             <group>
-                                <field name="purchase_date"/>
+                                <field name="purchase_date" widget="date" format="dd/MM/yyyy"/>
                                 <field name="sale_price"/>
                                 <field name="quantity_service"/>
                             </group>
