@@ -1,5 +1,5 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 fleet_admin,fleet admin,model_fleet_vehicle,group_fleet_admin,1,1,1,1
-fleet_read_all,fleet read all,model_fleet_vehicle,,1,0,0,0
+fleet_user,fleet user,model_fleet_vehicle,group_fleet_user,1,1,1,0
 report_admin,fleet admin,model_fleet_vehicle_report,group_fleet_admin,1,1,1,1
-report_read_all,report read all,model_fleet_vehicle_report,,1,0,0,0
+report_admin,fleet user,model_fleet_vehicle_report,group_fleet_user,1,1,1,0
